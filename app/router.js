@@ -16,10 +16,15 @@ Router.map(function() {
     this.route('edit', {
       path: '/edit/:bookmark_id'
     });
+    this.route('about');
   });
 
   this.route('page-not-found', {
     path: '/*wildcard'
+  });
+
+  this.route('users', function() {
+    this.route('list-active');
   });
 });
 
