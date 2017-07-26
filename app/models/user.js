@@ -1,4 +1,6 @@
+import Ember from 'ember';
 import DS from 'ember-data';
+import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default DS.Model.extend({
   username: DS.attr('string'),
@@ -11,5 +13,9 @@ export default DS.Model.extend({
   }),
   created: DS.attr('date', {
     defaultValue() { return new Date(); }
+  }),
+  bookmarks: hasMany('bookmark'),
+  fullName: Ember.computed('firstName', 'lastName', function() {
+    return `${this.get('firstName')} ${this.get('lastName')}`;
   })
 });
