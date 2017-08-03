@@ -1,10 +1,9 @@
 /* eslint-env node */
-'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
+  var ENV = {
     modulePrefix: 'ember-quickstart',
-    environment,
+    environment: environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
