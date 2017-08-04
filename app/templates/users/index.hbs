@@ -1,7 +1,7 @@
 <h3>Users</h3>
 <p>{{testProperty}}</p>
 {{#each model as |user index|}}
-    {{#users-list avatarUrl=user.avatar email=user.email}}
+    {{#users-list user.avatar user.email}}
         {{user.fullName}}
     {{/users-list}}
 {{/each}}
