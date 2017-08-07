@@ -17,6 +17,10 @@ export default Ember.Component.extend({
         },
         cancel() {
             Ember.Logger.info('cancel called');
+        },
+        delete(bookmark) {
+            bookmark.destroyRecord();
+            this.get('router').transitionTo('bookmarks');
         }
     }
 });
