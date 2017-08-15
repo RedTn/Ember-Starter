@@ -26,6 +26,7 @@ Router.map(function() {
   this.route('users', function() {
     this.route('list-active');
   });
+  this.route('noapplication-route');
 });
 
 export default Router;
