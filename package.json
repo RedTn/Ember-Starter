@@ -13,7 +13,10 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
-    "clean": "rm -rf node_modules dist tmp"
+    "clean": "rm -rf node_modules dist tmp",
+    "prettier": "prettier --single-quote --tab-width 4 --print-width 100 --write \"{app,tests,mirage,config}/**/*.js\"",
+    "lint": "eslint . --max-warnings 0",
+    "lint-fix": "npm run prettier && eslint . --fix --max-warnings 0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -40,7 +43,11 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.14.1",
     "ember-welcome-page": "^3.0.0",
-    "loader.js": "^4.2.3"
+    "eslint-plugin-ember": "^4.3.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.3",
+    "loader.js": "^4.2.3",
+    "prettier": "^1.5.3"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
